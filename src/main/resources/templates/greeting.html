@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="GreetingStyle.css">
+</head>
+<body>
+
+<h1>Welcome to password manager!</h1>
+<p th:text="'Hello, ' + ${name} + '!'" />
+
+
+<form id="login" method="get" action="login.php">
+    <label><b>User Name
+    </b>
+    </label>
+    <input type="text" name="Uname" id="Uname" placeholder="Username">
+    <br><br>
+    <label><b>Password
+    </b>
+    </label>
+    <input type="Password" name="Pass" id="Pass" placeholder="Password">
+    <br><br>
+    <input type="button" name="log" id="log" value="Log In Here">
+    <br><br>
+    <input type="checkbox" id="check">
+    <span>Remember me</span>
+    <br><br>
+
+</form>
+
+
+
+<!--.\mvnw spring-boot:run-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
