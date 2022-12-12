@@ -5,9 +5,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @SpringBootApplication
 @RestController
+//@EnableJpaRepositories("com.passwordmanager.*")
+//@ComponentScan(basePackages = { "com.passwordmanager.*" })
+//@EntityScan("com.passwordmanager.*")
 public class PasswordManagerApplication {
 
 	public static void main(String[] args) {

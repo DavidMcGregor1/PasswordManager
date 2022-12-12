@@ -6,8 +6,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import java.util.*;
 
+
 @Controller
 public class GreetingController {
+
+    public GreetingController(EntryRepository r){
+        repo = r;
+    }
+           //  @Autowired
+        private EntryRepository repo;
 
         @GetMapping("/greeting")
         public String greeting(@RequestParam(name="name", required=false, defaultValue = "World") String name, Model model) {
@@ -19,15 +26,29 @@ public class GreetingController {
         @GetMapping("/passwords")
         public String passwords(@RequestParam(name="name", required=false, defaultValue = "World") String name, Model model) {
             model.addAttribute("name", name);
+            List<Entry> allDbEntries = repo.findAll();
+
+            System.out.println("returned " + allDbEntries.isEmpty() + " > "+allDbEntries.stream().count());
 
             List<EntriesVm> allUserEntries = new ArrayList<EntriesVm>();
-            allUserEntries.add(new EntriesVm("title1", "username1", "password1", "note1"));
-            allUserEntries.add(new EntriesVm("title2", "username2", "password2", "note2"));
-            allUserEntries.add(new EntriesVm("title3", "username3", "password3", "note3"));
-            allUserEntries.add(new EntriesVm("title4", "username4", "password4", "note4"));
-            allUserEntries.add(new EntriesVm("title5", "username5", "password5", "note5"));
+
+            for (int i = 0; i < allDbEntries.stream().count(); i++) {
+                Entry a = allDbEntries.get(i);
+                if (a!=null) {
+                    EntriesVm x = new EntriesVm(a.title, a.username, a.password, a.notes);
+                    allUserEntries.add(x);
+                }
+            }
+
+
+//            .\mvnw spring-boot:run
+
+
+
 
             model.addAttribute("userEntries", allUserEntries);
+
+//            c_Apple;
 
 
             return "passwords";
