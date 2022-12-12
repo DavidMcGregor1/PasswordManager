@@ -8,7 +8,6 @@ public class EntriesVm {
         password = thePassword;
         notes = theNotes;
 
-//        cork;
     }
     public int id;
     public String title;
