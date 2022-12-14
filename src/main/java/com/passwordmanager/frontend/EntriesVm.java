@@ -9,7 +9,11 @@ public class EntriesVm {
         notes = theNotes;
 
     }
-    public int id;
+
+    public EntriesVm(int theId) {
+        id = theId;
+    }
+    public long id;
     public String title;
     public String username;
     public String password;

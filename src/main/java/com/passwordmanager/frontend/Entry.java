@@ -12,7 +12,8 @@ import jakarta.persistence.Id;
 @Entity
 public class Entry {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     public Long id;
 
     @Column(name="TITLE")
