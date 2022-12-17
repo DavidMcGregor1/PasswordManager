@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring6.view.ThymeleafViewResolver;
+import org.thymeleaf.templateresolver.ITemplateResolver;
 
 import java.util.*;
 
@@ -28,6 +30,7 @@ public class GreetingController {
         return viewResolver;
 
     }
+
 
     public GreetingController(EntryRepository r){
         repo = r;
@@ -51,6 +54,9 @@ public class GreetingController {
         @ResponseBody
         @PostMapping(path= "/apiAddEntry", consumes = "application/json", produces = "application/json")
         public  EntriesVm addEntry(@RequestBody EntriesVm newEntry) {
+            System.out.println("starting");
+
+
             EntriesVm newEntriesVm = newEntry;
                     //new EntriesVm("newTitle", "newUser", "newPassword", "newNote");
             Entry newerEntry = new Entry();
