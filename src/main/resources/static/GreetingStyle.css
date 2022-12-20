@@ -2,7 +2,7 @@ body
 {
     margin: 0;
     padding: 0;
-    background-color:#6abadeba;
+    background-color:#caedf0;
     font-family: 'Arial';
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -20,6 +20,107 @@ body
 
 }
 
+#signUp {
+
+width: 310px;
+height: 236px
+      background-color: #555;
+              color: white;
+              padding: 16px 15px;
+              border: none;
+              cursor: pointer;
+              opacity: 0.8;
+
+}
+
+#newUname {
+  width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+}
+
+#newPass {
+  width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+}
+
+
+
+
+
+
+
+
+.hidden {
+    display: none;
+}
+
+
+
+
+#sign-up-btn-sml {
+
+height: 30px;
+width: 100px;
+
+margin-left: 200px;
+margin-top: 195px;
+
+grid-column: 3;
+grid-row: 2;
+
+
+background-color: #555;
+color: white;
+border: none;
+cursor: pointer;
+opacity: 0.8;
+
+
+
+}
+
+
+#sign {
+  width: 300px;
+    height: 40px;
+
+
+     background-color: #555;
+        color: white;
+        margin: auto;
+        padding: 16px 15px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+}
+
+#log-in-btn-sml {
+height: 30px;
+width: 100px;
+
+margin-left: 220px;
+margin-top: 210px;
+
+grid-column: 3;
+grid-row: 2;
+
+
+background-color: #555;
+color: white;
+border: none;
+cursor: pointer;
+opacity: 0.8;
+}
+
+
+
+
 form {
 
 grid-column: 3 / span 1;
@@ -32,7 +133,11 @@ h1 {
 text-align: center;
 grid-column: 2 / span 3;
 padding-top: 40px;
+color: #009279;
+    font-weight: bold;
 }
+
+
 
 
 
@@ -44,6 +149,7 @@ h2{
 label{
 
     font-size: 17px;
+    color: black;
 }
 #Uname{
     width: 300px;
@@ -60,13 +166,24 @@ label{
     padding-left: 8px;
 
 }
+
+
+
+
+
+
 #log{
     width: 300px;
-    height: 30px;
-    border: none;
-    border-radius: 17px;
-    padding-left: 7px;
-    color: blue;
+    height: 40px;
+
+
+     background-color: #555;
+        color: white;
+        margin: auto;
+        padding: 16px 15px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
 
 
 }
