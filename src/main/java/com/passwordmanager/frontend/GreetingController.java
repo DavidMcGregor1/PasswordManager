@@ -32,21 +32,68 @@ public class GreetingController {
     }
 
 
-    public GreetingController(EntryRepository r){
+    public GreetingController(EntryRepository r, UserRepository u){
         repo = r;
+        repo2 = u;
     }
            //  @Autowired
         private EntryRepository repo;
+        private UserRepository repo2;
 
 
 
 
-        @GetMapping("/uiGreeting")
+
+    @GetMapping("/uiGreeting")
         public String greeting(@RequestParam(name="name", required=false, defaultValue = "World") String name, Model model) {
             model.addAttribute("name", name);
             System.out.println("fred!");
             return "greeting";
         }
+
+
+
+
+    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseBody
+    @PostMapping(path= "/apiLogIn", consumes = "application/json", produces = "application/json")
+    public  LogInVm logIn(@RequestBody LogInVm newEntry) {
+        System.out.println("starting");
+
+        LogInVm newLogInVm = new LogInVm(newEntry.username, newEntry.password );
+
+//        repo.save(newerEntry);
+
+        System.out.println(newLogInVm.username + newLogInVm.password);
+
+
+        List<User> allDbEntries = repo2.findAll();
+
+        System.out.println("returned " + allDbEntries.isEmpty() + " > "+allDbEntries.stream().count());
+
+        List<EntriesVm> allUserEntries = new ArrayList<EntriesVm>();
+
+        for (int i = 0; i < allDbEntries.stream().count(); i++) {
+            User a = allDbEntries.get(i);
+            if (a!=null) {
+
+                if(a.username.equals(newLogInVm.username) && (a.password.equals(newLogInVm.password))) {
+                    System.out.println("Successfuly logged in");
+                    newLogInVm.succeeded = true;
+                    break;
+
+
+                }
+
+
+            }
+        }
+
+
+
+
+        return newLogInVm;
+    }
 
 
 
