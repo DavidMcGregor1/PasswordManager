@@ -47,7 +47,7 @@ public class GreetingController {
     @GetMapping("/uiGreeting")
         public String greeting(@RequestParam(name="name", required=false, defaultValue = "World") String name, Model model) {
             model.addAttribute("name", name);
-            System.out.println("fred!");
+            System.out.println("arrived at greeting page");
             return "greeting";
         }
 
@@ -58,7 +58,7 @@ public class GreetingController {
     @ResponseBody
     @PostMapping(path= "/apiLogIn", consumes = "application/json", produces = "application/json")
     public  LogInVm logIn(@RequestBody LogInVm newEntry) {
-        System.out.println("starting");
+        System.out.println("log in api called");
 
         LogInVm newLogInVm = new LogInVm(newEntry.username, newEntry.password );
 
@@ -90,7 +90,7 @@ public class GreetingController {
         }
 
 
-
+        System.out.println(newLogInVm.username + newLogInVm.password + newLogInVm.succeeded);
 
         return newLogInVm;
     }

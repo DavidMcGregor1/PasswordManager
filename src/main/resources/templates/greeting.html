@@ -22,47 +22,61 @@
     <input type="Password" name="Pass" id="Pass" placeholder="Password">
     <br><br>
 <!--    <input type="button" name="log" id="log" value="Log In Here">-->
-    <button id="log">Log In</button>
+
     <br><br>
 
 </form>
 
+<button id="log">Log In</button>
 
 
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 <script>
 
-const smallSignUpButton = document.getElementById("sign-up-btn-sml")
+
+
+$(document).ready(function(){
+    $("#log").click(function() {
+        console.log("clk");
+
+        var test = JSON.stringify({
+        "username": $("#Uname").val() ,
+        "password": $("#Pass").val() ,
+
+
+        });
+
+        console.log("here")
+
+
+        $.ajax({
+            url: "/apiLogIn",
+            data: test,
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            success : function(serverResponse) {
+                        window.location.replace("/uiPasswords");
+
+                       },
+        });
+
+    });
+
+
+
+});
+
 const logInForm = document.getElementById("login")
-const signUpForm = document.getElementById("signUp")
-const smallLogInButton = document.getElementById("log-in-btn-sml")
-
-smallSignUpButton.addEventListener("click", () => {
-    logInForm.classList.add("hidden")
-    signUpForm.classList.remove("hidden")
-    smallSignUpButton.classList.add("hidden")
-    smallLogInButton.classList.remove("hidden")
-
-    console.log("clicked signup");
-})
-
-
-smallLogInButton.addEventListener("click", () => {
-    logInForm.classList.remove("hidden")
-    signUpForm.classList.add("hidden")
-    smallSignUpButton.classList.remove("hidden")
-        smallLogInButton.classList.add("hidden")
 
 
 
-})
 
 
-function hideLogIn() {
-    document.getElementById("login").style.display = "none";
-  }
+
+
 
 
 
