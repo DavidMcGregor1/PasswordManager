@@ -9,51 +9,49 @@ body
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 16px;
 }
-.login{
-        width: 382px;
-        overflow: hidden;
-        margin: auto;
-        margin: 20 0 0 450px;
-        padding: 80px;
-        background: #23463f;
-        border-radius: 15px ;
 
+
+.login{
+    width: 382px;
+    overflow: hidden;
+    margin: auto;
+    margin: 20 0 0 450px;
+    padding: 80px;
+    background: #23463f;
+    border-radius: 15px ;
 }
+
 
 #signUp {
 
-width: 310px;
-height: 236px
-      background-color: #555;
-              color: white;
-              padding: 16px 15px;
-              border: none;
-              cursor: pointer;
-              opacity: 0.8;
+    width: 310px;
+    height: 236px
+    background-color: #555;
+    color: white;
+    padding: 16px 15px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
 
 }
+
 
 #newUname {
-  width: 300px;
+    width: 300px;
     height: 30px;
     border: none;
     border-radius: 3px;
     padding-left: 8px;
 }
+
 
 #newPass {
-  width: 300px;
+    width: 300px;
     height: 30px;
     border: none;
     border-radius: 3px;
     padding-left: 8px;
 }
-
-
-
-
-
-
 
 
 .hidden {
@@ -61,84 +59,64 @@ height: 236px
 }
 
 
-
-
 #sign-up-btn-sml {
 
-height: 30px;
-width: 100px;
-
-margin-left: 200px;
-margin-top: 195px;
-
-grid-column: 3;
-grid-row: 2;
-
-
-background-color: #555;
-color: white;
-border: none;
-cursor: pointer;
-opacity: 0.8;
-
-
+    height: 30px;
+    width: 100px;
+    margin-left: 200px;
+    margin-top: 195px;
+    grid-column: 3;
+    grid-row: 2;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
 
 }
 
 
 #sign {
-  width: 300px;
+    width: 300px;
     height: 40px;
-
-
-     background-color: #555;
-        color: white;
-        margin: auto;
-        padding: 16px 15px;
-        border: none;
-        cursor: pointer;
-        opacity: 0.8;
+    background-color: #555;
+    color: white;
+    margin: auto;
+    padding: 16px 15px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
 }
+
 
 #log-in-btn-sml {
-height: 30px;
-width: 100px;
-
-margin-left: 220px;
-margin-top: 210px;
-
-grid-column: 3;
-grid-row: 2;
-
-
-background-color: #555;
-color: white;
-border: none;
-cursor: pointer;
-opacity: 0.8;
+    height: 30px;
+    width: 100px;
+    margin-left: 220px;
+    margin-top: 210px;
+    grid-column: 3;
+    grid-row: 2;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
 }
-
-
 
 
 form {
-
-grid-column: 3 / span 1;
-grid-row: 2 / span 1;
-
-
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
 }
+
 
 h1 {
-text-align: center;
-grid-column: 2 / span 3;
-padding-top: 40px;
-color: #009279;
+    text-align: center;
+    grid-column: 2 / span 3;
+    padding-top: 40px;
+    color: #009279;
     font-weight: bold;
 }
-
-
-
 
 
 h2{
@@ -146,11 +124,15 @@ h2{
     color: #277582;
     padding: auto;
 }
+
+
 label{
 
     font-size: 17px;
     color: black;
 }
+
+
 #Uname{
     width: 300px;
     height: 30px;
@@ -158,39 +140,36 @@ label{
     border-radius: 3px;
     padding-left: 8px;
 }
+
+
 #Pass{
     width: 300px;
     height: 30px;
     border: none;
     border-radius: 3px;
     padding-left: 8px;
-
 }
-
-
-
-
 
 
 #log{
     width: 300px;
     height: 40px;
-
-
-     background-color: #555;
-        color: white;
-        margin: auto;
-        padding: 16px 15px;
-        border: none;
-        cursor: pointer;
-        opacity: 0.8;
-
-
+    background-color: #555;
+    color: white;
+    margin: auto;
+    padding: 16px 15px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
 }
+
+
 span{
     color: white;
     font-size: 17px;
 }
+
+
 a{
     float: right;
     background-color: grey;
