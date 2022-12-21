@@ -21,15 +21,7 @@ import java.util.*;
 @Controller
 public class GreetingController {
 
-    @Bean
-    public ThymeleafViewResolver viewResolver() {
-        ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
-        viewResolver.setViewNames(new String[] {"ui*"});
 
-        System.out.println("Configured");
-        return viewResolver;
-
-    }
 
 
     public GreetingController(EntryRepository r, UserRepository u){
@@ -45,14 +37,13 @@ public class GreetingController {
 
 
     @GetMapping("/uiGreeting")
-        public String greeting(@RequestParam(name="name", required=false, defaultValue = "World") String name, Model model) {
-            model.addAttribute("name", name);
+        public String greeting() {
             System.out.println("arrived at greeting page");
             return "greeting";
         }
 
 
-
+//api call
 
     @ResponseStatus(value = HttpStatus.OK)
     @ResponseBody
@@ -64,12 +55,12 @@ public class GreetingController {
 
 //        repo.save(newerEntry);
 
-        System.out.println(newLogInVm.username + newLogInVm.password);
+        System.out.println("eere" + newLogInVm.username + newLogInVm.password);
 
 
         List<User> allDbEntries = repo2.findAll();
 
-        System.out.println("returned " + allDbEntries.isEmpty() + " > "+allDbEntries.stream().count());
+//        System.out.println("returned " + allDbEntries.isEmpty() + " > "+allDbEntries.stream().count());
 
         List<EntriesVm> allUserEntries = new ArrayList<EntriesVm>();
 
@@ -78,12 +69,22 @@ public class GreetingController {
             if (a!=null) {
 
                 if(a.username.equals(newLogInVm.username) && (a.password.equals(newLogInVm.password))) {
-                    System.out.println("Successfuly logged in");
+                    System.out.println("Successfully logged in");
                     newLogInVm.succeeded = true;
+
                     break;
 
 
+                } else {
+                    System.out.println("Log in failed");
                 }
+
+
+
+
+
+
+
 
 
             }

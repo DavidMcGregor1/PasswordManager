@@ -58,7 +58,16 @@ $(document).ready(function(){
             dataType: "json",
             contentType: "application/json",
             success : function(serverResponse) {
-                        window.location.replace("/uiPasswords");
+                        console.log("in here mate")
+
+                        if(serverResponse.succeeded == true) {
+                        alert("logged in")
+                            window.location.replace("/uiPasswords");
+                        } else {
+                        alert("failed to log in")
+                        }
+
+
 
                        },
         });
