@@ -156,11 +156,12 @@ label{
     height: 40px;
     background-color: #555;
     color: white;
-    margin: auto;
-    padding: 16px 15px;
+    padding: 6px 15px;
     border: none;
     cursor: pointer;
     opacity: 0.8;
+    grid-row: 3;
+    grid-column: 3;
 }
 
 
